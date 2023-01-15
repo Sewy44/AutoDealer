@@ -1,8 +1,10 @@
-﻿namespace AutoDealer.Models
+﻿using AutoDealer.Models.Enums;
+
+namespace AutoDealer.Models.VehicleComponents
 {
     public class Vehicle
     {
-        public Guid VehicleId { get; set; }
+        public string? VehicleVIN { get; set; }
         public TransmissionType? Transmission { get; set; }
         public InteriorColorType? InteriorColor { get; set; }
         public ExteriorColorType? ExteriorColor { get; set; }
