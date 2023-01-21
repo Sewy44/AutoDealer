@@ -19,3 +19,5 @@ C:\Users\sewy4\source\repos\sewy44-personal-public\AutoDealer\obj\Debug\net6.0\r
 C:\Users\sewy4\source\repos\sewy44-personal-public\AutoDealer\obj\Debug\net6.0\AutoDealer.pdb
 C:\Users\sewy4\source\repos\sewy44-personal-public\AutoDealer\obj\Debug\net6.0\AutoDealer.genruntimeconfig.cache
 C:\Users\sewy4\source\repos\sewy44-personal-public\AutoDealer\obj\Debug\net6.0\ref\AutoDealer.dll
+C:\Users\sewy4\source\repos\sewy44-personal-public\AutoDealer\obj\Debug\net6.0\AutoDealer.RazorAssemblyInfo.cache
+C:\Users\sewy4\source\repos\sewy44-personal-public\AutoDealer\obj\Debug\net6.0\AutoDealer.RazorAssemblyInfo.cs

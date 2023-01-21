@@ -5,9 +5,9 @@ namespace AutoDealer.Repositories.Interfaces
     public interface IVehicleRecordRepository
     {
         IEnumerable<VehicleRecord> GetAll();
-        VehicleRecord? FindById(Guid vehicleRecordId);
+        VehicleRecord? FindById(string vehicleVIN);
         void InsertVehicleRecord(VehicleRecord vehicleRecord);
         void UpdateVehicleRecord(VehicleRecord vehicleRecord);
-        void DeleteVehicleRecord(Guid vehicleRecordId);
+        void DeleteVehicleRecord(string vehicleVIN);
     }
 }

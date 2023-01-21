@@ -2,7 +2,7 @@
 
 namespace AutoDealer.Repositories.Interfaces
 {
-    public interface IContactRequest
+    public interface IContactRequestRepository
     {
         IEnumerable<ContactRequest> GetAll();
         void InsertContactRequest(ContactRequest contactRequest);

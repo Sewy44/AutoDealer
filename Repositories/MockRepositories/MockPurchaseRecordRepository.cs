@@ -6,7 +6,7 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class MockPurchaserRecordRepository : IPurchaseRecordRepository
+    public class MockPurchaseRecordRepository : IPurchaseRecordRepository
     {
         private readonly List<PurchaseRecord>? _purchaseRecords;
         public IEnumerable<PurchaseRecord> GetAll() =>

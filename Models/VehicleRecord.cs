@@ -1,11 +1,17 @@
-﻿using AutoDealer.Models.VehicleComponents;
+﻿using AutoDealer.Models.Enums;
+using AutoDealer.Models.VehicleComponents;
 
 namespace AutoDealer.Models
 {
     public class VehicleRecord
     {
-        public Guid VehicleRecordId { get; set; }
-        public Vehicle Vehicle { get; set; } = default!;
+        public string VehicleVIN { get; set; } = string.Empty;
+        public TransmissionType Transmission { get; set; } = default!;
+        public InteriorColorType InteriorColor { get; set; } = default!;
+        public ExteriorColorType ExteriorColor { get; set; } = default!;
+        public BodyStyleType BodyStyle { get; set; } = default!;
+        public ModelType Model { get; set; } = default!;
+        public decimal Mileage { get; set; }
         public DateTime DateAdded { get; set; }
         public string AddedBy { get; set; } = string.Empty;
         public decimal OriginalListPrice { get; set; }
@@ -16,7 +22,7 @@ namespace AutoDealer.Models
         public bool IsFeatured { get; set; }
         public bool IsUsed()
         {
-            if (Vehicle.Mileage >= 1000)
+            if (Mileage >= 1000)
             {
                 return true;
             }
