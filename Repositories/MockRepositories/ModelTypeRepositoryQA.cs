@@ -3,7 +3,7 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class MockModelTypeRepository : IModelTypeRepository
+    public class ModelTypeRepositoryQA : IModelTypeRepository
     {
         public IEnumerable<ModelType> GetAll() =>
             new List<ModelType>()

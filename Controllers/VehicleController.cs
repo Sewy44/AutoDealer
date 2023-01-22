@@ -1,14 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoDealer.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AutoDealer.Controllers
 {
     public class VehicleController : Controller
     {
-        private readonly IVehicleRecordService _vehicleRecordService;
+        private readonly IVehicleRecordRepository _vehicleRecordRepository;
 
-        public VehicleController(IVehicleRecordService vehicleRecordService)
+        public VehicleController(IVehicleRecordRepository vehicleRecordRepository)
         {
-            _vehicleRecordService = vehicleRecordService;
+            _vehicleRecordRepository = vehicleRecordRepository;
         }
 
         public ViewResult Index()
@@ -19,7 +20,8 @@ namespace AutoDealer.Controllers
 
         public IActionResult List()
         {
-            return View(_vehicleRecordService.GetAll);
+            ViewBag.Message = "Welcome to AutoDealer";
+            return View(_vehicleRecordRepository.GetAll());
         }
 
     }

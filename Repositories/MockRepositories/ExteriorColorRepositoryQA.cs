@@ -3,7 +3,7 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class MockExteriorColorTypeRepository : IExteriorColorTypeRepository
+    public class ExteriorColorRepositoryQA : IExteriorColorTypeRepository
     {
         public IEnumerable<ExteriorColorType> GetAll() =>
             new List<ExteriorColorType>()

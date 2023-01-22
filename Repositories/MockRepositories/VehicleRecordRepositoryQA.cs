@@ -3,14 +3,14 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class MockVehicleRecordRepository : IVehicleRecordRepository
+    public class VehicleRecordRepositoryQA : IVehicleRecordRepository
     {
         private readonly IInteriorColorTypeRepository _interiorColorTypeRepository = new
             MockInteriorColorTypeRepository();
         private readonly IExteriorColorTypeRepository _exteriorColorTypeRepository = new
-            MockExteriorColorTypeRepository();
+            ExteriorColorRepositoryQA();
         private readonly IModelTypeRepository _modelTypeRepository = new
-            MockModelTypeRepository();
+            ModelTypeRepositoryQA();
         public IEnumerable<VehicleRecord> GetAll() =>
             new List<VehicleRecord>
             {
@@ -23,6 +23,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
                     Model = _modelTypeRepository.GetAll().ToList()[0],
                     Mileage = 590,
+                    Year = "2022",
                     DateAdded = new DateTime(1/21/2023),
                     AddedBy = "jamie@autodealer.com",
                     OriginalListPrice = 57000,
@@ -42,6 +43,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
                     Model = _modelTypeRepository.GetAll().ToList()[1],
                     Mileage = 1200,
+                    Year = "2021",
                     DateAdded = new DateTime(1/21/2023),
                     AddedBy = "jamie@autodealer.com",
                     OriginalListPrice = 40000,

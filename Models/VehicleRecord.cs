@@ -12,6 +12,7 @@ namespace AutoDealer.Models
         public BodyStyleType BodyStyle { get; set; } = default!;
         public ModelType Model { get; set; } = default!;
         public decimal Mileage { get; set; }
+        public string Year { get; set; }
         public DateTime DateAdded { get; set; }
         public string AddedBy { get; set; } = string.Empty;
         public decimal OriginalListPrice { get; set; }

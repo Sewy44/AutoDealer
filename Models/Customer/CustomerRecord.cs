@@ -7,6 +7,7 @@ namespace AutoDealer.Models.Customer
         public Guid CustomerId { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
+        public string FullName => FirstName + " " + LastName;
         public string PhoneNumber { get; set; } = string.Empty;
         public DateTime AddedDate { get; set; }
         public string AddressLineOne { get; set; } = string.Empty;

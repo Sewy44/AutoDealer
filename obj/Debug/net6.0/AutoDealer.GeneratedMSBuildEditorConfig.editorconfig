@@ -15,6 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\sewy4\source\repos\sewy44-personal-public\AutoDealer
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/sewy4/source/repos/sewy44-personal-public/AutoDealer/Views/Vehicle/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxJbmRleC5jc2h0bWw=
+[C:/Users/sewy4/source/repos/sewy44-personal-public/AutoDealer/Views/BrandName/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmROYW1lXExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

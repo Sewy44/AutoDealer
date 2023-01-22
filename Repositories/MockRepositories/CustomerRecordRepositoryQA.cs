@@ -4,10 +4,21 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class MockCustomerRecordRepository : ICustomerRecordRepository
+    public class CustomerRecordRepositoryQA : ICustomerRecordRepository
     {
         private List<CustomerRecord> _customerRecords = new List<CustomerRecord>();
-        public IEnumerable<CustomerRecord> GetAll() =>
+        private static DateTime _addedDate = new DateTime(2023, 1, 22);
+
+        public CustomerRecordRepositoryQA()
+        {
+            var seedList = SeedRepo();
+
+            foreach(var item in seedList)
+            {
+                _customerRecords.Add(item);
+            }
+        }
+        public IEnumerable<CustomerRecord> SeedRepo() =>
             new List<CustomerRecord>
             {
                 new CustomerRecord
@@ -16,7 +27,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     FirstName = "Jim",
                     LastName = "Jimerson",
                     PhoneNumber = "502-555-5555",
-                    AddedDate = DateTime.Now,
+                    AddedDate = _addedDate,
                     AddressLineOne = "555 5th Street",
                     Email = "Jim@jim.com",
                     City = "Louisville",
@@ -29,7 +40,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     FirstName = "Tom",
                     LastName = "Thomson",
                     PhoneNumber = "502-555-4444",
-                    AddedDate = DateTime.Now,
+                    AddedDate = _addedDate,
                     AddressLineOne = "Tomson St.",
                     Email = "Tom@tom.com",
                     City = "Columbus",
@@ -38,6 +49,10 @@ namespace AutoDealer.Repositories.MockRepositories
                 }
             };
 
+        public IEnumerable<CustomerRecord> GetAll()
+        {
+            return _customerRecords;
+        }
         public void InsertCustomerRecord(CustomerRecord customerRecord)
         {
             _customerRecords.Add(customerRecord);

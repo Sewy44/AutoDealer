@@ -4,15 +4,15 @@ using AutoDealer.Repositories.MockRepositories;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IBrandNameRepository, MockBrandNameRepository>();
-builder.Services.AddScoped<IContactRequestRepository, MockContactRequestRepository>();  
-builder.Services.AddScoped<ICustomerRecordRepository, MockCustomerRecordRepository>();  
-builder.Services.AddScoped<IExteriorColorTypeRepository, MockExteriorColorTypeRepository>();    
+builder.Services.AddScoped<IBrandNameRepository, BrandNameRepositoryQA>();
+builder.Services.AddScoped<IContactRequestRepository, ContactRequestRepositoryQA>();  
+builder.Services.AddScoped<ICustomerRecordRepository, CustomerRecordRepositoryQA>();  
+builder.Services.AddScoped<IExteriorColorTypeRepository, ExteriorColorRepositoryQA>();    
 builder.Services.AddScoped<IInteriorColorTypeRepository, MockInteriorColorTypeRepository>();   
-builder.Services.AddScoped<IModelTypeRepository, MockModelTypeRepository>();
-builder.Services.AddScoped<IPurchaseRecordRepository, MockPurchaseRecordRepository>();
-builder.Services.AddScoped<ISpecialRepository, MockSpecialRepository>();
-builder.Services.AddScoped<IVehicleRecordRepository, MockVehicleRecordRepository>();
+builder.Services.AddScoped<IModelTypeRepository, ModelTypeRepositoryQA>();
+builder.Services.AddScoped<IPurchaseRecordRepository, PurchaseRecordRepositoryQA>();
+builder.Services.AddScoped<ISpecialRepository, SpecialRepositoryQA>();
+builder.Services.AddScoped<IVehicleRecordRepository, VehicleRecordRepositoryQA>();
 var app = builder.Build();
 
 #region MiddleWare Components
