@@ -3,9 +3,20 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class MockInteriorColorTypeRepository : IInteriorColorTypeRepository
+    public class InteriorColorTypeRepositoryQA : IInteriorColorTypeRepository
     {
-        public IEnumerable<InteriorColorType> GetAll() =>
+        private List<InteriorColorType> _interiorColors = new List<InteriorColorType>();
+
+        public InteriorColorTypeRepositoryQA()
+        {
+            var seedList = SeedRepo();
+
+            foreach(var item in seedList)
+            {
+                _interiorColors.Add(item);
+            }
+        }
+        public IEnumerable<InteriorColorType> SeedRepo() =>
             new List<InteriorColorType>()
             {
                 new InteriorColorType()
@@ -29,5 +40,15 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorName = "Gray"
                 }
             };
+
+        public void InsertInteriorColor(InteriorColorType interiorColor)
+        {
+            _interiorColors.Add(interiorColor);
+        }
+
+        public IEnumerable<InteriorColorType> GetAll()
+        {
+            return _interiorColors;
+        }
     }
 }

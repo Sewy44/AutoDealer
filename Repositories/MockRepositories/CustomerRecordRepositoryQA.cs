@@ -18,7 +18,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 _customerRecords.Add(item);
             }
         }
-        public IEnumerable<CustomerRecord> SeedRepo() =>
+        private IEnumerable<CustomerRecord> SeedRepo() =>
             new List<CustomerRecord>
             {
                 new CustomerRecord

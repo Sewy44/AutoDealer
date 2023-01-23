@@ -4,6 +4,5 @@
     {
         public Guid ExteriorColorId { get; set; }
         public string ExteriorColorName { get; set; } = string.Empty;
-
     }
 }

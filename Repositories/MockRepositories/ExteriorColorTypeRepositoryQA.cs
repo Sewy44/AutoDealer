@@ -3,9 +3,21 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class ExteriorColorRepositoryQA : IExteriorColorTypeRepository
+    public class ExteriorColorTypeRepositoryQA : IExteriorColorTypeRepository
     {
-        public IEnumerable<ExteriorColorType> GetAll() =>
+        private List<ExteriorColorType> _exteriorColors = new List<ExteriorColorType>();
+
+        public ExteriorColorTypeRepositoryQA()
+        {
+            var seedList = SeedRepo();
+
+            foreach(var item in seedList)
+            {
+                _exteriorColors.Add(item);
+            }
+        }
+
+        private IEnumerable<ExteriorColorType> SeedRepo() =>
             new List<ExteriorColorType>()
             {
                 new ExteriorColorType()
@@ -34,5 +46,15 @@ namespace AutoDealer.Repositories.MockRepositories
                     ExteriorColorName = "White"
                 }
             };
+
+        public IEnumerable<ExteriorColorType> GetAll()
+        {
+            return _exteriorColors;
+        }
+
+        public void InsertExteriorColor(ExteriorColorType newExteriorColor)
+        {
+            _exteriorColors.Add(newExteriorColor);
+        }
     }
 }

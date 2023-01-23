@@ -5,5 +5,6 @@ namespace AutoDealer.Repositories.Interfaces
     public interface IInteriorColorTypeRepository
     {
         IEnumerable<InteriorColorType> GetAll();
+        void InsertInteriorColor(InteriorColorType interiorColor);
     }
 }

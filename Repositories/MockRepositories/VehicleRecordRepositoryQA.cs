@@ -6,9 +6,9 @@ namespace AutoDealer.Repositories.MockRepositories
     public class VehicleRecordRepositoryQA : IVehicleRecordRepository
     {
         private readonly IInteriorColorTypeRepository _interiorColorTypeRepository = new
-            MockInteriorColorTypeRepository();
+            InteriorColorTypeRepositoryQA();
         private readonly IExteriorColorTypeRepository _exteriorColorTypeRepository = new
-            ExteriorColorRepositoryQA();
+            ExteriorColorTypeRepositoryQA();
         private readonly IModelTypeRepository _modelTypeRepository = new
             ModelTypeRepositoryQA();
         public IEnumerable<VehicleRecord> GetAll() =>
