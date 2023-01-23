@@ -11,7 +11,19 @@ namespace AutoDealer.Repositories.MockRepositories
             ExteriorColorTypeRepositoryQA();
         private readonly IModelTypeRepository _modelTypeRepository = new
             ModelTypeRepositoryQA();
-        public IEnumerable<VehicleRecord> GetAll() =>
+
+        private List<VehicleRecord> _vehicleRecords = new List<VehicleRecord>();
+
+        public VehicleRecordRepositoryQA()
+        {
+            var seedList = SeedRepo();
+
+            foreach(var vehicleRecord in seedList)
+            {
+                _vehicleRecords.Add(vehicleRecord);
+            }
+        }
+        public IEnumerable<VehicleRecord> SeedRepo() =>
             new List<VehicleRecord>
             {
                 new VehicleRecord
@@ -56,29 +68,31 @@ namespace AutoDealer.Repositories.MockRepositories
                 }
             };
        
-        public void DeleteVehicleRecord(string vehicleVIN)
+        public void DeleteVehicleRecord(VehicleRecord vehicle)
         {
             throw new NotImplementedException();
         }
 
         public VehicleRecord? FindById(string vehicleVIN) => GetAll().FirstOrDefault(v => v.VehicleVIN == vehicleVIN);
 
-        public IEnumerable<VehicleRecord> GetFeaturedVehicles
+        public IEnumerable<VehicleRecord> GetFeaturedVehicles()
         {
-            get
-            {
-                return GetAll().Where(v => v.IsFeatured);
-            }
+            return GetAll().Where(v => v.IsFeatured);
         }
 
         public void InsertVehicleRecord(VehicleRecord vehicleRecord)
         {
-            throw new NotImplementedException();
+            _vehicleRecords.Add(vehicleRecord);
         }
 
         public void UpdateVehicleRecord(VehicleRecord vehicleRecord)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<VehicleRecord> GetAll()
+        {
+            return _vehicleRecords;
         }
     }
 }

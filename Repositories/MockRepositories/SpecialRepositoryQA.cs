@@ -5,7 +5,19 @@ namespace AutoDealer.Repositories.MockRepositories
 {
     public class SpecialRepositoryQA : ISpecialRepository
     {
-        public IEnumerable<Special> GetAll() =>
+        private List<Special> _specials = new List<Special>();
+        private DateTime _addedDate = new DateTime(2023, 1, 1);
+
+        public SpecialRepositoryQA()
+        {
+            var seedList = SeedRepo();
+
+            foreach(var special in seedList)
+            {
+                _specials.Add(special);
+            }
+        }
+        public IEnumerable<Special> SeedRepo() =>
             new List<Special>
             {
                 new Special
@@ -15,7 +27,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     SpecialDescription = "Speak with any representative to learn how you can take advantage of"
                     + "this great offer to get free tires for the life of your vehicle!",
                     AddedBy = "jamie@autodealer.com",
-                    AddedDate = DateTime.Now,
+                    AddedDate = _addedDate,
                     ExpirationDate = DateTime.Now.AddMonths(1),
 
                 },
@@ -25,20 +37,30 @@ namespace AutoDealer.Repositories.MockRepositories
                     SpecialName = "$1,000 off MSRP for any new SUV!",
                     SpecialDescription = "Come in today to purchase your new SUV and save $1,000!",
                     AddedBy = "jamie@autodealer.com",
-                    AddedDate = DateTime.Now,
+                    AddedDate = _addedDate,
                     ExpirationDate = DateTime.Now.AddDays(14),
                 }
             };
 
-
         public void DeleteSpecial(Guid specialId)
         {
-            throw new NotImplementedException();
+            var specialToDelete = GetAll().FirstOrDefault(s => s.Equals(specialId));
+
+            if(specialToDelete != null)
+            {
+                _specials.Remove(specialToDelete);
+            }
+          
         }
 
         public void InsertSpecial(Special special)
         {
-            throw new NotImplementedException();
+            _specials.Add(special);
+        }
+
+        public IEnumerable<Special> GetAll()
+        {
+            return _specials;
         }
     }
 }

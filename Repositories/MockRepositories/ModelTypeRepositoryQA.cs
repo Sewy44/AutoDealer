@@ -5,7 +5,20 @@ namespace AutoDealer.Repositories.MockRepositories
 {
     public class ModelTypeRepositoryQA : IModelTypeRepository
     {
-        public IEnumerable<ModelType> GetAll() =>
+        private List<ModelType> _models = new List<ModelType>();
+
+        private DateTime _addedDate = new DateTime(2023, 1, 1);
+
+        public ModelTypeRepositoryQA()
+        {
+            var seedList = SeedRepo();
+
+            foreach(var item in seedList)
+            {
+                _models.Add(item);
+            }
+        }
+        public IEnumerable<ModelType> SeedRepo() =>
             new List<ModelType>()
             {
                 new ModelType()
@@ -17,7 +30,7 @@ namespace AutoDealer.Repositories.MockRepositories
                         MakeName = "Ford"
                     },
                     AddedBy = "jamie@Autodealer.com",
-                    AddedDate = DateTime.Now
+                    AddedDate = _addedDate
                 },
                  new ModelType()
                 {
@@ -28,7 +41,7 @@ namespace AutoDealer.Repositories.MockRepositories
                         MakeName = "Ford"
                     },
                     AddedBy = "jamie@Autodealer.com",
-                    AddedDate = DateTime.Now
+                    AddedDate = _addedDate
                 },
                   new ModelType()
                 {
@@ -39,7 +52,7 @@ namespace AutoDealer.Repositories.MockRepositories
                         MakeName = "Kia"
                     },
                     AddedBy = "jamie@Autodealer.com",
-                    AddedDate = DateTime.Now
+                    AddedDate = _addedDate
                 },
                    new ModelType()
                 {
@@ -50,7 +63,7 @@ namespace AutoDealer.Repositories.MockRepositories
                         MakeName = "Kia"
                     },
                     AddedBy = "jamie@Autodealer.com",
-                    AddedDate = DateTime.Now
+                    AddedDate = _addedDate
                 },
                     new ModelType()
                 {
@@ -61,7 +74,7 @@ namespace AutoDealer.Repositories.MockRepositories
                         MakeName = "Jeep"
                     },
                     AddedBy = "jamie@Autodealer.com",
-                    AddedDate = DateTime.Now
+                    AddedDate = _addedDate
                 },
                      new ModelType()
                 {
@@ -72,14 +85,19 @@ namespace AutoDealer.Repositories.MockRepositories
                         MakeName = "Jeep"
                     },
                     AddedBy = "jamie@Autodealer.com",
-                    AddedDate = DateTime.Now
+                    AddedDate = _addedDate
                 }
             };
 
 
         public void InsertVehicleModelType(ModelType modelType)
         {
-            throw new NotImplementedException();
+            _models.Add(modelType);
+        }
+
+        public IEnumerable<ModelType> GetAll()
+        {
+            return _models;
         }
     }
 }
