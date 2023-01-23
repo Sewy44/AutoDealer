@@ -1,6 +1,6 @@
 # AutoDealer
  
-#Decscription
+## Decscription
 
 With this project I am rewriting the Car Dealership project using .Net Core 6. As I build it, I'll use concepts learned over the last year of writing software professionally. This application Allows public users to see featured vehicles and specials, search vehicles by new or used, make, model, year, and a range of prices and years. Users can request contact in general or about specific vehicles.
 
