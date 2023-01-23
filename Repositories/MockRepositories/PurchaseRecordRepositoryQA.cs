@@ -8,8 +8,20 @@ namespace AutoDealer.Repositories.MockRepositories
 {
     public class PurchaseRecordRepositoryQA : IPurchaseRecordRepository
     {
-        private readonly List<PurchaseRecord>? _purchaseRecords;
-        public IEnumerable<PurchaseRecord> GetAll() =>
+        private readonly List<PurchaseRecord>? _purchaseRecords = new List<PurchaseRecord>();
+
+        private static DateTime _purchaseDate = new DateTime(2023,1,22);
+
+        public PurchaseRecordRepositoryQA()
+        {
+            var seedList = SeedRepo();
+
+            foreach(var record in seedList)
+            {
+                _purchaseRecords.Add(record);
+            }
+        }
+        public IEnumerable<PurchaseRecord> SeedRepo() =>
            new List<PurchaseRecord>
             {
                 new PurchaseRecord()
@@ -18,7 +30,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     TypeOfPurchase = PurchaseType.DealerFinance,
                     PurchasedVehicleRecord = new VehicleRecord(),
                     PurchasingCustomer = new CustomerRecord(),
-                    PurchaseDate = DateTime.Now,
+                    PurchaseDate = _purchaseDate,
                     PurchasePrice = 50000,
                     SalesRepresentative = "Jamie Seward"
                 },
@@ -28,7 +40,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     TypeOfPurchase = PurchaseType.BankFinance,
                     PurchasedVehicleRecord = new VehicleRecord(),
                     PurchasingCustomer = new CustomerRecord(),
-                    PurchaseDate = DateTime.Now,
+                    PurchaseDate = _purchaseDate,
                     PurchasePrice = 30000,
                     SalesRepresentative = "Jamie Seward"
                 }
@@ -37,6 +49,11 @@ namespace AutoDealer.Repositories.MockRepositories
         public void InsertPurchaseRecord(PurchaseRecord purchaseRecord)
         {
             _purchaseRecords?.Add(purchaseRecord);
+        }
+
+        public IEnumerable<PurchaseRecord> GetAll()
+        {
+            return _purchaseRecords;
         }
     }
 }

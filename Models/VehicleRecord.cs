@@ -12,7 +12,7 @@ namespace AutoDealer.Models
         public BodyStyleType BodyStyle { get; set; } = default!;
         public ModelType Model { get; set; } = default!;
         public decimal Mileage { get; set; }
-        public string Year { get; set; }
+        public string Year { get; set; } = String.Empty;
         public DateTime DateAdded { get; set; }
         public string AddedBy { get; set; } = string.Empty;
         public decimal OriginalListPrice { get; set; }
@@ -20,7 +20,7 @@ namespace AutoDealer.Models
         public decimal MRSP { get; set; }
         public string? Description { get; set; } = string.Empty;
         public string? ImageFileName { get; set; } = string.Empty;
-        public bool IsFeatured { get; set; }
+        public bool IsFeatured { get; set; } = false;
         public bool IsUsed()
         {
             if (Mileage >= 1000)
@@ -30,6 +30,6 @@ namespace AutoDealer.Models
             return false;
         }
 
-        public bool IsSold { get; set; }
+        public bool IsSold { get; set; } = false;
     }
 }
