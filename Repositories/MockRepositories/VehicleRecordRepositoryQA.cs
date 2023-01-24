@@ -68,16 +68,24 @@ namespace AutoDealer.Repositories.MockRepositories
                 }
             };
        
-        public void DeleteVehicleRecord(VehicleRecord vehicle)
+        public void DeleteVehicleRecord(string vehicleVIN)
         {
-            throw new NotImplementedException();
+            var vehicleRecordtoDelete = GetAll().FirstOrDefault(v => v.VehicleVIN == vehicleVIN);
+           
+            if(vehicleRecordtoDelete != null)
+            {
+                _vehicleRecords.Remove(vehicleRecordtoDelete);
+            }
         }
 
         public VehicleRecord? FindById(string vehicleVIN) => GetAll().FirstOrDefault(v => v.VehicleVIN == vehicleVIN);
 
-        public IEnumerable<VehicleRecord> GetFeaturedVehicles()
+        public IEnumerable<VehicleRecord> FeaturedVehicles
         {
-            return GetAll().Where(v => v.IsFeatured);
+            get
+            {
+                return GetAll().Where(v => v.IsFeatured);
+            }
         }
 
         public void InsertVehicleRecord(VehicleRecord vehicleRecord)
@@ -87,7 +95,10 @@ namespace AutoDealer.Repositories.MockRepositories
 
         public void UpdateVehicleRecord(VehicleRecord vehicleRecord)
         {
-            throw new NotImplementedException();
+            if(_vehicleRecords.FirstOrDefault(v => v.VehicleVIN == vehicleRecord.VehicleVIN) != null)
+            {
+                vehicleRecord = _vehicleRecords.FirstOrDefault(v => v.VehicleVIN == vehicleRecord.VehicleVIN);
+            }
         }
 
         public IEnumerable<VehicleRecord> GetAll()

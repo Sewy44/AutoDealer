@@ -8,5 +8,6 @@
         public string AddedBy { get; set; } = string.Empty;
         public DateTime AddedDate { get; set; }
         public DateTime ExpirationDate { get; set; }
+        public string ImageFileName { get; set; } = string.Empty;
     }
 }

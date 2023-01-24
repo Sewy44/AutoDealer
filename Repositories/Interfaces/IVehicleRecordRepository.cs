@@ -8,7 +8,7 @@ namespace AutoDealer.Repositories.Interfaces
         VehicleRecord? FindById(string vehicleVIN);
         void InsertVehicleRecord(VehicleRecord vehicleRecord);
         void UpdateVehicleRecord(VehicleRecord vehicleRecord);
-        void DeleteVehicleRecord(VehicleRecord vehicleRecord);
-        IEnumerable<VehicleRecord> GetFeaturedVehicles();
+        void DeleteVehicleRecord(string vehicleVIN);
+        IEnumerable<VehicleRecord> FeaturedVehicles { get; }
     }
 }
