@@ -52,7 +52,7 @@ namespace AutoDealer.Repositories.MockRepositories
                  new BrandName()
                 {
                     BrandNameId= Guid.NewGuid(),
-                    MakeName = "Dodge",
+                    MakeName = "Jeep",
                     AddedDate= _addedDate,
                     AddedBy = "jamie@Autodealer.com"
                 }

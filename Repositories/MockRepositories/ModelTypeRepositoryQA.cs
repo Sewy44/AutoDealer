@@ -86,7 +86,30 @@ namespace AutoDealer.Repositories.MockRepositories
                     },
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
+                },
+                      new ModelType()
+                {
+                    ModelId = Guid.NewGuid(),
+                    ModelName = "ForeRunner",
+                    Make = new BrandName()
+                    {
+                        MakeName = "Toyota"
+                    },
+                    AddedBy = "jamie@Autodealer.com",
+                    AddedDate = _addedDate
+                },
+                       new ModelType()
+                {
+                    ModelId = Guid.NewGuid(),
+                    ModelName = "Tercel",
+                    Make = new BrandName()
+                    {
+                        MakeName = "Toyota"
+                    },
+                    AddedBy = "jamie@Autodealer.com",
+                    AddedDate = _addedDate
                 }
+
             };
 
 

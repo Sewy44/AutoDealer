@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "akUaLORK96NEZ3Zy7+PZooWU0tAtgBsqpsZmA3NEfX4=",
+  "Hash": "c/xr47g4cwPJaoxIGNAkQXCeTAXbMTSev0i3385z7io=",
   "Source": "AutoDealer",
   "BasePath": "_content/AutoDealer",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\sewy4\\source\\repos\\sewy44-personal-public\\AutoDealer\\wwwroot\\images\\tires.jpg",
+      "SourceId": "AutoDealer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sewy4\\source\\repos\\sewy44-personal-public\\AutoDealer\\wwwroot\\",
+      "BasePath": "_content/AutoDealer",
+      "RelativePath": "images/tires.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\tires.jpg"
     },
     {
       "Identity": "C:\\Users\\sewy4\\source\\repos\\sewy44-personal-public\\AutoDealer\\wwwroot\\js\\site.js",

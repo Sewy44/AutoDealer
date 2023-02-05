@@ -29,7 +29,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     AddedBy = "jamie@autodealer.com",
                     AddedDate = _addedDate,
                     ExpirationDate = DateTime.Now.AddMonths(1),
-
+                    ImageFileName = "tires.jpg"
                 },
                 new Special
                 {
@@ -39,6 +39,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     AddedBy = "jamie@autodealer.com",
                     AddedDate = _addedDate,
                     ExpirationDate = DateTime.Now.AddDays(14),
+                    ImageFileName = "tires.jpg"
                 }
             };
 
