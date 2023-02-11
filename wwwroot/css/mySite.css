@@ -1,0 +1,24 @@
+﻿
+.vehicle-button {
+    position: relative;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+}
+
+.vehicle-card {
+    border: none;
+}
+
+.card-body.vehicle-button {
+    padding: 0px;
+}
+
+.vehicle-button > h4, .vehicle-button > .h4 {
+    margin-bottom: 0px;
+}
+
+.vehicle-link {
+    text-decoration: none;
+}

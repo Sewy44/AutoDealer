@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c/xr47g4cwPJaoxIGNAkQXCeTAXbMTSev0i3385z7io=",
+  "Hash": "LgYOt/Hupiu0nbJsjjU3K7m/4q1P5AKRtzJlBEAUgL8=",
   "Source": "AutoDealer",
   "BasePath": "_content/AutoDealer",
   "Mode": "Default",
@@ -17,6 +17,23 @@
   ],
   "Assets": [
     {
+      "Identity": "C:\\Users\\sewy4\\source\\repos\\sewy44-personal-public\\AutoDealer\\wwwroot\\css\\mySite.css",
+      "SourceId": "AutoDealer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sewy4\\source\\repos\\sewy44-personal-public\\AutoDealer\\wwwroot\\",
+      "BasePath": "_content/AutoDealer",
+      "RelativePath": "css/mySite.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\mySite.css"
+    },
+    {
       "Identity": "C:\\Users\\sewy4\\source\\repos\\sewy44-personal-public\\AutoDealer\\wwwroot\\css\\site.css",
       "SourceId": "AutoDealer",
       "SourceType": "Discovered",
@@ -32,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\sewy4\\source\\repos\\sewy44-personal-public\\AutoDealer\\wwwroot\\images\\Logo.jpg",
+      "SourceId": "AutoDealer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sewy4\\source\\repos\\sewy44-personal-public\\AutoDealer\\wwwroot\\",
+      "BasePath": "_content/AutoDealer",
+      "RelativePath": "images/Logo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Logo.jpg"
     },
     {
       "Identity": "C:\\Users\\sewy4\\source\\repos\\sewy44-personal-public\\AutoDealer\\wwwroot\\images\\tires.jpg",
