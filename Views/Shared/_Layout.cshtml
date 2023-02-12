@@ -12,7 +12,7 @@
 <body style="padding-top:0px;">
 <div class="navbar navbar-dark bg-dark sticky-top" style="padding-top:0px; z-index:999;">
      <a href="@Url.Action("Index", "Home")">
-                    <img src="@Url.Content("~/Images/Logo.JPG")" class="img-circle" style="height: 50px;">
+                    <img src="@Url.Content("~/Images/Logo.jpg")" class="img-circle" style="height: 50px; margin-left: 30px; padding-right:35px;">
                 </a>
     <a class="navbar-brand" href="#">Home</a>
     <a class="navbar-brand" href="#">New Inventory</a>
@@ -24,7 +24,10 @@
         @RenderBody()
     </div>
     <footer>
-        Copyright
+        <hr />
+        <div>
+            <p>Created by Seward Enterprises <span>&copy;</span>2023</p>
+        </div>
     </footer>
 @*    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")*@

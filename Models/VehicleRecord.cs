@@ -19,7 +19,8 @@ namespace AutoDealer.Models
         public decimal CurrentListPrice { get; set; }
         public decimal MRSP { get; set; }
         public string? Description { get; set; } = string.Empty;
-        public string? ImageFileName { get; set; } = string.Empty;
+
+        public string? ImageFileName {get;set;} = string.Empty;
         public bool IsFeatured { get; set; } = false;
         public bool IsUsed()
         {

@@ -42,7 +42,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 57000,
                     MRSP = 58500,
                     Description = "Very cool SUV!",
-                    ImageFileName = null,
+                    ImageFileName = "inventory-1C4RJFBG5FC767030.jpg"
                 },
                 new VehicleRecord
                 {
@@ -60,7 +60,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 40000,
                     MRSP = 41500,
                     Description = "A beautiful sports car!",
-                    ImageFileName = "tires.jpg",
+                    ImageFileName = "inventory-1C4RJFBG5FC767031.jpg",
                     IsFeatured = true,
                     
                 },
@@ -80,7 +80,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 200,
                     MRSP = 200,
                     Description = "A classic!",
-                    ImageFileName = "tires.jpg",
+                    ImageFileName = "inventory-aaaaaaaaaaaaaaaaa.jpg",
                     IsFeatured = true,
                 },
                 new VehicleRecord
@@ -99,7 +99,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 51500,
                     MRSP = 54500,
                     Description = "A beautiful used SUV!",
-                    ImageFileName = "tires.jpg",
+                    ImageFileName = "inventory-bbbbbbbbbbbbbbbb.jpg",
                 },
                 new VehicleRecord
                 {
@@ -117,7 +117,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 32000,
                     MRSP = 36400,
                     Description = "llorem Ipsum...!",
-                    ImageFileName = "tires.jpg",
+                    ImageFileName = "inventory-ccccccccccccccccc.jpg",
                 },
                 new VehicleRecord
                 {
@@ -135,7 +135,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 20000,
                     MRSP = 41500,
                     Description = "A great Jeep for playing outdoors!",
-                    ImageFileName = "tires.jpg",
+                    ImageFileName = "inventory-ddddddddddddddddd.jpg",
                     IsFeatured = true,
                 },
                 new VehicleRecord
@@ -154,7 +154,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 23000,
                     MRSP = 41500,
                     Description = "Another kinda cool SUV!",
-                    ImageFileName = "tires.jpg",
+                    ImageFileName = "inventory-eeeeeeeeeeeeeeeee.jpg",
                 },
                 new VehicleRecord
                 {
@@ -171,8 +171,8 @@ namespace AutoDealer.Repositories.MockRepositories
                     OriginalListPrice = 40000,
                     CurrentListPrice = 40000,
                     MRSP = 41500,
-                    Description = "Kina cool SUV!",
-                    ImageFileName = "tires.jpg",
+                    Description = "Could we have any more Mustangs?",
+                    ImageFileName = "inventory-fffffffffffffffff.jpg",
                     IsFeatured = true,
                     IsSold = false,
                 },
@@ -192,7 +192,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 40000,
                     MRSP = 41500,
                     Description = "Kina cool SUV!",
-                    ImageFileName = "tires.jpg",
+                    ImageFileName = "inventory-ggggggggggggggggg.jpg",
                     IsFeatured = true,
                     IsSold = false,
                 },
@@ -212,7 +212,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 40000,
                     MRSP = 41500,
                     Description = "Kina cool SUV!",
-                    ImageFileName = "tires.jpg",
+                    ImageFileName = "inventory-hhhhhhhhhhhhhhhhh.jpg",
                     IsFeatured = true,
                     IsSold = false,
                 },
