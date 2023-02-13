@@ -19,18 +19,23 @@ namespace AutoDealer.Models
         public decimal CurrentListPrice { get; set; }
         public decimal MRSP { get; set; }
         public string? Description { get; set; } = string.Empty;
-
-        public string? ImageFileName {get;set;} = string.Empty;
         public bool IsFeatured { get; set; } = false;
-        public bool IsUsed()
-        {
-            if (Mileage >= 1000)
-            {
-                return true;
-            }
-            return false;
+        public bool IsUsed 
+        { 
+            get => IsVehicleUsed();
+            set => IsVehicleUsed(); 
         }
 
         public bool IsSold { get; set; } = false;
+        public string ImageFileName 
+        { 
+            get => "inventory-" + VehicleVIN + ".jpg";
+            set => ImageFileName = value; 
+        }
+
+        private bool IsVehicleUsed()
+        {
+            return Mileage >= 1000 ? true : false;
+        }
     }
 }
