@@ -41,7 +41,8 @@ namespace AutoDealer.Repositories.MockRepositories
                     OriginalListPrice = 57000,
                     CurrentListPrice = 57000,
                     MRSP = 58500,
-                    Description = "Very cool SUV!"
+                    Description = "Very cool SUV!",
+                    IsUsed = true
                 },
                 new VehicleRecord
                 {
@@ -77,7 +78,8 @@ namespace AutoDealer.Repositories.MockRepositories
                     CurrentListPrice = 200,
                     MRSP = 200,
                     Description = "A classic!",
-                    IsFeatured = true
+                    IsFeatured = true,
+                    IsUsed = true
                 },
                 new VehicleRecord
                 {
