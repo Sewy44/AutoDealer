@@ -1,9 +1,11 @@
 ﻿using AutoDealer.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace AutoDealer.Models.Customer
 {
     public class CustomerRecord
     {
+        [Key]
         public Guid CustomerId { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;

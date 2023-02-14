@@ -1,7 +1,10 @@
-﻿namespace AutoDealer.Models.Special
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AutoDealer.Models.Special
 {
     public class Special
-    {
+    {   
+        [Key]
         public Guid SpecialId { get; set; }
         public string SpecialName { get; set; } = string.Empty;
         public string SpecialDescription { get; set; } = string.Empty;

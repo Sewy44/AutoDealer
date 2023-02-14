@@ -1,7 +1,10 @@
-﻿namespace AutoDealer.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AutoDealer.Models
 {
     public class ContactRequest
     {
+        [Key]
         public Guid ContactRequestId { get; set; }
         public string? ContactFirstName { get; set; }
         public string? ContactLastName { get; set; }

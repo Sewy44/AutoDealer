@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repositories\MockRepositories\**" />
+    <Content Remove="Repositories\MockRepositories\**" />
+    <EmbeddedResource Remove="Repositories\MockRepositories\**" />
+    <None Remove="Repositories\MockRepositories\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.2">
       <PrivateAssets>all</PrivateAssets>

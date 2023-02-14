@@ -1,6 +1,5 @@
 using AutoDealer.Repositories;
 using AutoDealer.Repositories.Interfaces;
-using AutoDealer.Repositories.MockRepositories;
 using AutoDealer.Repositories.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +19,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AutoDealerDbContext>(options =>
 {
     options.UseSqlServer(
-        builder.Configuration["ConntectionStrings:AutoDealerDbContextConntection"]);
+        builder.Configuration["ConnectionStrings:AutoDealerDbContextConnection"]);
 });
 
 var app = builder.Build();
@@ -34,6 +33,6 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 app.MapDefaultControllerRoute();//endpoint middleware.
-
+DBInitializer.Seed(app);
 #endregion
 app.Run();
