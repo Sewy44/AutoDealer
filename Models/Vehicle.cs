@@ -37,5 +37,12 @@ namespace AutoDealer.Models
             get => "inventory-" + VehicleVIN + ".jpg";
             set => ImageFileName = value; 
         }
+
+        public Vehicle()
+        {
+            Model = new ModelType();
+            InteriorColor = new InteriorColor();
+            ExteriorColor = new ExteriorColor();
+        }
     }
 }

@@ -7,8 +7,13 @@ namespace AutoDealer.Models.VehicleComponents
         [Key]
         public Guid ModelId { get; set; }
         public string? Model { get; set; }
-        public Brand? BrandName { get; set; }
+        public Brand? Brand { get; set; }
         public string? AddedBy { get; set; }
         public DateTime AddedDate { get; set; }
+
+        public ModelType()
+        {
+            Brand Brand = new Brand();
+        }
     }
 }
