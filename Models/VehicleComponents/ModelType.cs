@@ -6,9 +6,9 @@ namespace AutoDealer.Models.VehicleComponents
     {
         [Key]
         public Guid ModelId { get; set; }
-        public string ModelName { get; set; } = string.Empty;
-        public BrandName Make { get; set; } = default!;
-        public string AddedBy { get; set; } = string.Empty;
+        public string? Model { get; set; }
+        public Brand? BrandName { get; set; }
+        public string? AddedBy { get; set; }
         public DateTime AddedDate { get; set; }
     }
 }

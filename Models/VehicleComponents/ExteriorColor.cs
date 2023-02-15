@@ -2,10 +2,10 @@
 
 namespace AutoDealer.Models.VehicleComponents
 {
-    public class ExteriorColorType
+    public class ExteriorColor
     {
         [Key]
         public Guid ExteriorColorId { get; set; }
-        public string ExteriorColorName { get; set; } = string.Empty;
+        public string? ExteriorColorName { get; set; }
     }
 }

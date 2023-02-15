@@ -6,9 +6,9 @@ namespace AutoDealer.ViewModels
     public class HomeIndexViewModel
     {
         public IEnumerable<Special>? Specials { get; }
-        public IEnumerable<VehicleRecord> FeaturedVehicles { get; }
+        public IEnumerable<Vehicle> FeaturedVehicles { get; }
 
-        public HomeIndexViewModel(IEnumerable<Special> specials, IEnumerable<VehicleRecord> featuredVehicles)
+        public HomeIndexViewModel(IEnumerable<Special> specials, IEnumerable<Vehicle> featuredVehicles)
         {
             Specials = specials;
             FeaturedVehicles = featuredVehicles;

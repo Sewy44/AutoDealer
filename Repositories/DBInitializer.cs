@@ -19,19 +19,19 @@ namespace AutoDealer.Repositories
             if (!context.CustomerRecords.Any())
             {
                 context.AddRange
-                    (new CustomerRecord
-                    {
-                        CustomerId = Guid.NewGuid(),
-                        FirstName = "Jim",
-                        LastName = "Jimerson",
-                        PhoneNumber = "502-555-5555",
-                        AddedDate = _addedDate,
-                        AddressLineOne = "555 5th Street",
-                        Email = "Jim@jim.com",
-                        City = "Louisville",
-                        ZipCode = "40444",
-                        State = StateAbbreviation.KY
-                    },
+                (new CustomerRecord
+                {
+                    CustomerId = Guid.NewGuid(),
+                    FirstName = "Jim",
+                    LastName = "Jimerson",
+                    PhoneNumber = "502-555-5555",
+                    AddedDate = _addedDate,
+                    AddressLineOne = "555 5th Street",
+                    Email = "Jim@jim.com",
+                    City = "Louisville",
+                    ZipCode = "40444",
+                    State = StateAbbreviation.KY
+                },
                 new CustomerRecord
                 {
                     CustomerId = Guid.NewGuid(),
@@ -47,41 +47,41 @@ namespace AutoDealer.Repositories
                 });
             }
 
-            if (!context.BrandNames.Any())
+            if (!context.Brands.Any())
             {
                 context.AddRange
-                (new BrandName()
+                (new Brand()
                 {
                     BrandNameId = Guid.NewGuid(),
-                    MakeName = "Ford",
+                    BrandName = "Ford",
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
-                new BrandName()
+                new Brand()
                 {
                     BrandNameId = Guid.NewGuid(),
-                    MakeName = "GMC",
+                    BrandName = "GMC",
                     AddedDate = _addedDate,
                     AddedBy = "jamie@Autodealer.com"
                 },
-                new BrandName()
+                new Brand()
                 {
                     BrandNameId = Guid.NewGuid(),
-                    MakeName = "Toyota",
+                    BrandName = "Toyota",
                     AddedDate = _addedDate,
                     AddedBy = "jamie@Autodealer.com"
                 },
-                new BrandName()
+                new Brand()
                 {
                     BrandNameId = Guid.NewGuid(),
-                    MakeName = "Kia",
+                    BrandName = "Kia",
                     AddedDate = _addedDate,
                     AddedBy = "jamie@Autodealer.com"
                 },
-                 new BrandName()
+                 new Brand()
                  {
                      BrandNameId = Guid.NewGuid(),
-                     MakeName = "Jeep",
+                     BrandName = "Jeep",
                      AddedDate = _addedDate,
                      AddedBy = "jamie@Autodealer.com"
                  });
@@ -122,27 +122,27 @@ namespace AutoDealer.Repositories
             if (!context.ExteriorColors.Any())
             {
                 context.AddRange
-                (new ExteriorColorType()
+                (new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "Red"
                 },
-                new ExteriorColorType()
+                new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "Black"
                 },
-                new ExteriorColorType()
+                new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "Silver"
                 },
-                new ExteriorColorType()
+                new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "Blue"
                 },
-                new ExteriorColorType()
+                new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "White"
@@ -152,22 +152,22 @@ namespace AutoDealer.Repositories
             if (!context.InteriorColors.Any())
             {
                 context.AddRange
-                (new InteriorColorType()
+                (new InteriorColor()
                 {
                     InteriorColorId = Guid.NewGuid(),
                     InteriorColorName = "Black"
                 },
-                new InteriorColorType()
+                new InteriorColor()
                 {
                     InteriorColorId = Guid.NewGuid(),
                     InteriorColorName = "Tan"
                 },
-                new InteriorColorType()
+                new InteriorColor()
                 {
                     InteriorColorId = Guid.NewGuid(),
                     InteriorColorName = "White"
                 },
-                new InteriorColorType()
+                new InteriorColor()
                 {
                     InteriorColorId = Guid.NewGuid(),
                     InteriorColorName = "Gray"
@@ -180,88 +180,64 @@ namespace AutoDealer.Repositories
                 (new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Edge",
-                    Make = new BrandName()
-                    {
-                        MakeName = "Ford"
-                    },
+                    Model = "Edge",
+                    BrandName = context.Brands.FirstOrDefault(x => x.BrandName == "Ford"),
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
                 new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Mustang",
-                    Make = new BrandName()
-                    {
-                        MakeName = "Ford"
-                    },
+                    Model = "Mustang",
+                    BrandName = context.Brands.FirstOrDefault(x => x.BrandName == "Ford"),
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
                 new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Sorrento",
-                    Make = new BrandName()
-                    {
-                        MakeName = "Kia"
-                    },
+                    Model = "Sorrento",
+                    BrandName = context.Brands.FirstOrDefault(x => x.BrandName == "Kia"),
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
                 new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Optima",
-                    Make = new BrandName()
-                    {
-                        MakeName = "Kia"
-                    },
+                    Model = "Optima",
+                    BrandName = context.Brands.FirstOrDefault(x => x.BrandName == "Kia"),
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
                 new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Grand Cherokee L",
-                    Make = new BrandName()
-                    {
-                        MakeName = "Jeep"
-                    },
+                    Model = "Grand Cherokee L",
+                    BrandName = context.Brands.FirstOrDefault(x => x.BrandName == "Jeep"),
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
                 new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Wrangler",
-                    Make = new BrandName()
-                    {
-                        MakeName = "Jeep"
-                    },
+                    Model = "Wrangler",
+                    BrandName = context.Brands.FirstOrDefault(x => x.BrandName == "Jeep"),
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
                 new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "ForeRunner",
-                    Make = new BrandName()
-                    {
-                        MakeName = "Toyota"
-                    },
+                    Model = "ForeRunner",
+                    BrandName = context.Brands.FirstOrDefault(x => x.BrandName == "Toyota"),
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
                 new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Tercel",
-                    Make = new BrandName()
-                    {
-                        MakeName = "Toyota"
-                    },
+                    Model = "Tercel",
+                    BrandName = context.Brands.FirstOrDefault(x => x.BrandName == "Toyota"),
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 });
@@ -320,17 +296,17 @@ namespace AutoDealer.Repositories
                 });
             }
 
-            if (!context.VehicleRecords.Any())
+            if (!context.Vehicles.Any())
             {
                 context.AddRange
-                (new VehicleRecord
+                (new Vehicle
                 {
                     VehicleVIN = "1C4RJFBG5FC767030",
                     Transmission = Models.Enums.TransmissionType.Automatic,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Tan" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "Black" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Tan"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "Black"),
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
-                    Model = new ModelType { ModelName = "Edge", Make = new BrandName { MakeName = "Ford" } },
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Edge"),
                     Mileage = 590,
                     Year = "2022",
                     DateAdded = new DateTime(1 / 21 / 2023),
@@ -341,14 +317,14 @@ namespace AutoDealer.Repositories
                     Description = "Very cool SUV!",
                     IsUsed = true
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "1C4RJFBG5FC767031",
                     Transmission = Models.Enums.TransmissionType.Automatic,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Gray" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "Red" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Gray"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "Red"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = new ModelType { ModelName = "Mustang", Make = new BrandName { MakeName = "Ford"}},
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Mustang"),
                     Mileage = 1200,
                     Year = "2021",
                     DateAdded = new DateTime(1 / 21 / 2023),
@@ -359,14 +335,14 @@ namespace AutoDealer.Repositories
                     Description = "A beautiful sports car!",
                     IsFeatured = true
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "aaaaaaaaaaaaaaaaa",
                     Transmission = Models.Enums.TransmissionType.Manual,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Gray" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "Blue" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Gray"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "Blue"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = new ModelType { ModelName = "Tercel", Make = new BrandName { MakeName = "Toyota" } },
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Tercel"),
                     Mileage = 360000,
                     Year = "1978",
                     DateAdded = new DateTime(1 / 21 / 2023),
@@ -378,14 +354,14 @@ namespace AutoDealer.Repositories
                     IsFeatured = true,
                     IsUsed = true
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "bbbbbbbbbbbbbbbb",
                     Transmission = Models.Enums.TransmissionType.Automatic,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Black" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "Black" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Black"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "Black"),
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
-                    Model = new ModelType { ModelName = "Grand Cherokee", Make = new BrandName { MakeName = "Jeep" } },
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Grand Cherokee"),
                     Mileage = 2600,
                     Year = "2022",
                     DateAdded = new DateTime(1 / 21 / 2023),
@@ -395,14 +371,14 @@ namespace AutoDealer.Repositories
                     MRSP = 54500,
                     Description = "A beautiful used SUV!"
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "ccccccccccccccccc",
                     Transmission = Models.Enums.TransmissionType.Automatic,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Tan" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "Silver" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Tan"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "Silver"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = new ModelType { ModelName = "Optima", Make = new BrandName { MakeName = "Kia" } },
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Optima"),
                     Mileage = 2300,
                     Year = "2021",
                     DateAdded = new DateTime(1 / 21 / 2023),
@@ -412,14 +388,14 @@ namespace AutoDealer.Repositories
                     MRSP = 36400,
                     Description = "llorem Ipsum...!"
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "ddddddddddddddddd",
                     Transmission = Models.Enums.TransmissionType.Automatic,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Gray" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "White" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Gray"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "White"),
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
-                    Model = new ModelType { ModelName = "Wrangler", Make = new BrandName { MakeName = "Jeep" } },
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Wrangler"),
                     Mileage = 127000,
                     Year = "2015",
                     DateAdded = new DateTime(1 / 21 / 2023),
@@ -430,14 +406,14 @@ namespace AutoDealer.Repositories
                     Description = "A great Jeep for playing outdoors!",
                     IsFeatured = true
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "eeeeeeeeeeeeeeeee",
                     Transmission = Models.Enums.TransmissionType.Manual,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Black" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "Black" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Black"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "Black"),
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
-                    Model = new ModelType { ModelName = "Sorrento", Make = new BrandName { MakeName = "Kia" } },
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Sorrento"),
                     Mileage = 35000,
                     Year = "2020",
                     DateAdded = new DateTime(1 / 21 / 2023),
@@ -447,14 +423,14 @@ namespace AutoDealer.Repositories
                     MRSP = 41500,
                     Description = "Another kinda cool SUV!"
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "fffffffffffffffff",
                     Transmission = Models.Enums.TransmissionType.Automatic,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Gray" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "Red" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Gray"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "Red"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = new ModelType { ModelName = "Mustang", Make = new BrandName { MakeName = "Ford" } },
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Mustang"),
                     Mileage = 1200,
                     Year = "2021",
                     DateAdded = new DateTime(1 / 21 / 2023),
@@ -466,14 +442,14 @@ namespace AutoDealer.Repositories
                     IsFeatured = true,
                     IsSold = false
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "ggggggggggggggggg",
                     Transmission = Models.Enums.TransmissionType.Automatic,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Gray" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "Red" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Gray"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "Red"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = new ModelType { ModelName = "Mustang", Make = new BrandName { MakeName = "Ford" } },
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Mustang"),
                     Mileage = 1200,
                     Year = "2021",
                     DateAdded = new DateTime(1 / 21 / 2023),
@@ -485,14 +461,14 @@ namespace AutoDealer.Repositories
                     IsFeatured = true,
                     IsSold = false
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "hhhhhhhhhhhhhhhhh",
                     Transmission = Models.Enums.TransmissionType.Automatic,
-                    InteriorColor = new InteriorColorType { InteriorColorName = "Gray" },
-                    ExteriorColor = new ExteriorColorType { ExteriorColorName = "Red" },
+                    InteriorColor = context.InteriorColors.FirstOrDefault(c => c.InteriorColorName == "Gray"),
+                    ExteriorColor = context.ExteriorColors.FirstOrDefault(c => c.ExteriorColorName == "Red"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = new ModelType { ModelName = "Mustang", Make = new BrandName { MakeName = "Ford" } },
+                    Model = context.Models.FirstOrDefault(m => m.Model == "Mustang"),
                     Mileage = 1200,
                     Year = "2021",
                     DateAdded = new DateTime(1 / 21 / 2023),

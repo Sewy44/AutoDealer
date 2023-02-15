@@ -2,12 +2,12 @@
 
 namespace AutoDealer.Models.VehicleComponents
 {
-    public class BrandName
+    public class Brand
     {
         [Key]
         public Guid BrandNameId { get; set; }
-        public string MakeName { get; set; } = string.Empty;
+        public string? BrandName { get; set; }
         public DateTime AddedDate { get; set; }
-        public string AddedBy { get; set; } = string.Empty;
+        public string? AddedBy { get; set; }
     }
 }

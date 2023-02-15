@@ -13,6 +13,6 @@ namespace AutoDealer.Models
         public string? ContactPhone { get; set; }
         public string? ContactMessage { get; set; }
         public DateTime DateContactRequested { get; set; }
-        public VehicleRecord? VehicleRequested { get; set; }
+        public Vehicle? VehicleRequested { get; set; }
     }
 }

@@ -5,9 +5,9 @@ namespace AutoDealer.Controllers
 {
     public class BrandNameController : Controller
     {
-        private readonly IBrandNameRepository _brandnameRepository;
+        private readonly IBrandRepository _brandnameRepository;
 
-        public BrandNameController(IBrandNameRepository brandNameRepository)
+        public BrandNameController(IBrandRepository brandNameRepository)
         {
             _brandnameRepository = brandNameRepository;
         }

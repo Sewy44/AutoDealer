@@ -7,9 +7,9 @@ namespace AutoDealer.Controllers
     public class HomeController : Controller
     {
         private readonly ISpecialRepository _specialsRepository;
-        private readonly IVehicleRecordRepository _vehicleRecordRepository;
+        private readonly IVehicleRepository _vehicleRecordRepository;
 
-        public HomeController(ISpecialRepository specialRepository, IVehicleRecordRepository vehicleRecordRepository)
+        public HomeController(ISpecialRepository specialRepository, IVehicleRepository vehicleRecordRepository)
         {
             _specialsRepository = specialRepository;
             _vehicleRecordRepository = vehicleRecordRepository;

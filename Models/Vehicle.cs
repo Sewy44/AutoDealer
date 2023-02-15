@@ -5,21 +5,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AutoDealer.Models
 {
-    public class VehicleRecord
+    public class Vehicle
     {
         [Key]
         public string VehicleVIN { get; set; } = string.Empty;
-        public TransmissionType Transmission { get; set; } = default!;
-        public InteriorColorType InteriorColor { get; set; } = default!;
-        public ExteriorColorType ExteriorColor { get; set; } = default!;
-        public BodyStyleType BodyStyle { get; set; } = default!;
-        public ModelType Model { get; set; } = default!;
+        public TransmissionType? Transmission { get; set; }
+        public InteriorColor? InteriorColor { get; set; }
+        public ExteriorColor? ExteriorColor { get; set; }
+        public BodyStyleType BodyStyle { get; set; }
+        public ModelType? Model { get; set; }
         
         [Column(TypeName = "decimal(6,0)")]
         public decimal Mileage { get; set; }
-        public string Year { get; set; } = string.Empty;
+        public string? Year { get; set; }
         public DateTime DateAdded { get; set; }
-        public string AddedBy { get; set; } = string.Empty;
+        public string? AddedBy { get; set; }
         
         [Column(TypeName = "decimal(8,2)")]
         public decimal OriginalListPrice { get; set; }
@@ -27,7 +27,7 @@ namespace AutoDealer.Models
         public decimal CurrentListPrice { get; set; }
         [Column(TypeName = "decimal(8,2)")]
         public decimal MRSP { get; set; }
-        public string? Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
         public bool IsFeatured { get; set; } = false;
         public bool IsSold { get; set; } = false;
         public bool IsUsed { get; set; } = false;

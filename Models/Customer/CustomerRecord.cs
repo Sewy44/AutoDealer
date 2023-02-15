@@ -18,6 +18,5 @@ namespace AutoDealer.Models.Customer
         public string City { get; set; } = string.Empty;
         public string ZipCode { get; set; } = string.Empty;
         public StateAbbreviation State { get; set; }
-
     }
 }

@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<IBrandNameRepository, BrandNameRepository>();
+builder.Services.AddScoped<IBrandRepository, BrandRepository>();
 builder.Services.AddScoped<IContactRequestRepository, ContactRequestRepository>();  
 builder.Services.AddScoped<ICustomerRecordRepository, CustomerRecordRepository>();  
-builder.Services.AddScoped<IExteriorColorTypeRepository, ExteriorColorTypeRepository>();    
-builder.Services.AddScoped<IInteriorColorTypeRepository, InteriorColorTypeRepository>();   
+builder.Services.AddScoped<IExteriorColorRepository, ExteriorColorRepository>();    
+builder.Services.AddScoped<IInteriorColorRepository, InteriorColorRepository>();   
 builder.Services.AddScoped<IModelTypeRepository, ModelTypeRepository>();
 builder.Services.AddScoped<IPurchaseRecordRepository, PurchaseRecordRepository>();
 builder.Services.AddScoped<ISpecialRepository, SpecialRepository>();
-builder.Services.AddScoped<IVehicleRecordRepository, VehicleRecordRepository>();
+builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AutoDealerDbContext>(options =>

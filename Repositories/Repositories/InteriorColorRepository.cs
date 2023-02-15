@@ -3,21 +3,21 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.Repositories
 {
-    public class InteriorColorTypeRepository : IInteriorColorTypeRepository
+    public class InteriorColorRepository : IInteriorColorRepository
     {
         private readonly AutoDealerDbContext _dbContext;
 
-        public InteriorColorTypeRepository(AutoDealerDbContext dbContext)
+        public InteriorColorRepository(AutoDealerDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public IEnumerable<InteriorColorType> GetAll()
+        public IEnumerable<InteriorColor> GetAll()
         {
             return _dbContext.InteriorColors;
         }
 
-        public void InsertInteriorColor(InteriorColorType interiorColor)
+        public void InsertInteriorColor(InteriorColor interiorColor)
         {
             _dbContext.InteriorColors.Add(interiorColor);
         }

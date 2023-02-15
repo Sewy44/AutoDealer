@@ -5,9 +5,9 @@ namespace AutoDealer.Controllers
 {
     public class VehicleController : Controller
     {
-        private readonly IVehicleRecordRepository _vehicleRecordRepository;
+        private readonly IVehicleRepository _vehicleRecordRepository;
 
-        public VehicleController(IVehicleRecordRepository vehicleRecordRepository)
+        public VehicleController(IVehicleRepository vehicleRecordRepository)
         {
             _vehicleRecordRepository = vehicleRecordRepository;
         }

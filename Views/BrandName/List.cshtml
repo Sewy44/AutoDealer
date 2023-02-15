@@ -1,11 +1,11 @@
-﻿@model IEnumerable<AutoDealer.Models.VehicleComponents.BrandName>
+﻿@model IEnumerable<AutoDealer.Models.VehicleComponents.Brand>
 
 <div row>
 @foreach(var brand in Model)
 {
     <div col-md-4>
         <h2>@brand.BrandNameId</h2>
-        <h2>@brand.MakeName</h2>
+        <h2>@brand.BrandName</h2>
         <h2>@brand.AddedDate</h2>
         <h2>@brand.AddedBy</h2>
     </div>
