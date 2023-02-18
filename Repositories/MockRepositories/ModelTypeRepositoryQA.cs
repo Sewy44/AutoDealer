@@ -24,10 +24,10 @@ namespace AutoDealer.Repositories.MockRepositories
                 new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Edge",
-                    Make = new BrandName()
+                    Model = "Edge",
+                    Brand = new Brand()
                     {
-                        MakeName = "Ford"
+                        BrandName = "Ford"
                     },
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
@@ -35,10 +35,10 @@ namespace AutoDealer.Repositories.MockRepositories
                  new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Mustang",
-                    Make = new BrandName()
+                    Model = "Mustang",
+                    Brand = new Brand()
                     {
-                        MakeName = "Ford"
+                        BrandName = "Ford"
                     },
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
@@ -46,10 +46,10 @@ namespace AutoDealer.Repositories.MockRepositories
                   new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Sorrento",
-                    Make = new BrandName()
+                    Model = "Sorrento",
+                    Brand = new Brand()
                     {
-                        MakeName = "Kia"
+                        BrandName = "Kia"
                     },
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
@@ -57,10 +57,10 @@ namespace AutoDealer.Repositories.MockRepositories
                    new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Optima",
-                    Make = new BrandName()
+                    Model = "Optima",
+                    Brand = new Brand()
                     {
-                        MakeName = "Kia"
+                        BrandName = "Kia"
                     },
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
@@ -68,10 +68,10 @@ namespace AutoDealer.Repositories.MockRepositories
                     new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Grand Cherokee L",
-                    Make = new BrandName()
+                    Model = "Grand Cherokee L",
+                    Brand = new Brand()
                     {
-                        MakeName = "Jeep"
+                        BrandName = "Jeep"
                     },
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
@@ -79,10 +79,10 @@ namespace AutoDealer.Repositories.MockRepositories
                      new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Wrangler",
-                    Make = new BrandName()
+                    Model = "Wrangler",
+                    Brand = new Brand()
                     {
-                        MakeName = "Jeep"
+                        BrandName = "Jeep"
                     },
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
@@ -90,10 +90,10 @@ namespace AutoDealer.Repositories.MockRepositories
                       new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "ForeRunner",
-                    Make = new BrandName()
+                    Model = "ForeRunner",
+                    Brand = new Brand()
                     {
-                        MakeName = "Toyota"
+                        BrandName = "Toyota"
                     },
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
@@ -101,10 +101,10 @@ namespace AutoDealer.Repositories.MockRepositories
                        new ModelType()
                 {
                     ModelId = Guid.NewGuid(),
-                    ModelName = "Tercel",
-                    Make = new BrandName()
+                    Model = "Tercel",
+                    Brand = new Brand()
                     {
-                        MakeName = "Toyota"
+                        BrandName = "Toyota"
                     },
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate

@@ -3,11 +3,11 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class InteriorColorTypeRepositoryQA : IInteriorColorTypeRepository
+    public class InteriorColorRepositoryQA : IInteriorColorRepository
     {
-        private List<InteriorColorType> _interiorColors = new List<InteriorColorType>();
+        private List<InteriorColor> _interiorColors = new List<InteriorColor>();
 
-        public InteriorColorTypeRepositoryQA()
+        public InteriorColorRepositoryQA()
         {
             var seedList = SeedRepo();
 
@@ -16,37 +16,37 @@ namespace AutoDealer.Repositories.MockRepositories
                 _interiorColors.Add(item);
             }
         }
-        public IEnumerable<InteriorColorType> SeedRepo() =>
-            new List<InteriorColorType>()
+        public IEnumerable<InteriorColor> SeedRepo() =>
+            new List<InteriorColor>()
             {
-                new InteriorColorType()
+                new InteriorColor()
                 {
                     InteriorColorId = Guid.NewGuid(),
                     InteriorColorName = "Black"
                 },
-                new InteriorColorType()
+                new InteriorColor()
                 {
                     InteriorColorId = Guid.NewGuid(),
                     InteriorColorName = "Tan"
                 },
-                new InteriorColorType()
+                new InteriorColor()
                 {
                     InteriorColorId = Guid.NewGuid(),
                     InteriorColorName = "White"
                 },
-                new InteriorColorType()
+                new InteriorColor()
                 {
                     InteriorColorId = Guid.NewGuid(),
                     InteriorColorName = "Gray"
                 }
             };
 
-        public void InsertInteriorColor(InteriorColorType interiorColor)
+        public void InsertInteriorColor(InteriorColor interiorColor)
         {
             _interiorColors.Add(interiorColor);
         }
 
-        public IEnumerable<InteriorColorType> GetAll()
+        public IEnumerable<InteriorColor> GetAll()
         {
             return _interiorColors;
         }

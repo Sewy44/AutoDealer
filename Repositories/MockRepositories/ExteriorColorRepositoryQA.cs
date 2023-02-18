@@ -3,11 +3,11 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class ExteriorColorTypeRepositoryQA : IExteriorColorTypeRepository
+    public class ExteriorColorRepositoryQA : IExteriorColorRepository
     {
-        private List<ExteriorColorType> _exteriorColors = new List<ExteriorColorType>();
+        private List<ExteriorColor> _exteriorColors = new List<ExteriorColor>();
 
-        public ExteriorColorTypeRepositoryQA()
+        public ExteriorColorRepositoryQA()
         {
             var seedList = SeedRepo();
 
@@ -17,42 +17,42 @@ namespace AutoDealer.Repositories.MockRepositories
             }
         }
 
-        private IEnumerable<ExteriorColorType> SeedRepo() =>
-            new List<ExteriorColorType>()
+        private IEnumerable<ExteriorColor> SeedRepo() =>
+            new List<ExteriorColor>()
             {
-                new ExteriorColorType()
+                new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "Red"
                 },
-                new ExteriorColorType()
+                new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "Black"
                 },
-                new ExteriorColorType()
+                new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "Silver"
                 },
-                new ExteriorColorType()
+                new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "Blue"
                 },
-                new ExteriorColorType()
+                new ExteriorColor()
                 {
                     ExteriorColorId = Guid.NewGuid(),
                     ExteriorColorName = "White"
                 }
             };
 
-        public IEnumerable<ExteriorColorType> GetAll()
+        public IEnumerable<ExteriorColor> GetAll()
         {
             return _exteriorColors;
         }
 
-        public void InsertExteriorColor(ExteriorColorType newExteriorColor)
+        public void InsertExteriorColor(ExteriorColor newExteriorColor)
         {
             _exteriorColors.Add(newExteriorColor);
         }

@@ -28,7 +28,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     PurchaseId = Guid.NewGuid(),
                     TypeOfPurchase = PurchaseType.DealerFinance,
-                    PurchasedVehicleRecord = new VehicleRecord(),
+                    PurchasedVehicleRecord = new Vehicle(),
                     PurchasingCustomer = new CustomerRecord(),
                     PurchaseDate = _purchaseDate,
                     PurchasePrice = 50000,
@@ -38,7 +38,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     PurchaseId = Guid.NewGuid(),
                     TypeOfPurchase = PurchaseType.BankFinance,
-                    PurchasedVehicleRecord = new VehicleRecord(),
+                    PurchasedVehicleRecord = new Vehicle(),
                     PurchasingCustomer = new CustomerRecord(),
                     PurchaseDate = _purchaseDate,
                     PurchasePrice = 30000,

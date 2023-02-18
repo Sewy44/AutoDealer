@@ -3,37 +3,37 @@ using AutoDealer.Repositories.Interfaces;
 
 namespace AutoDealer.Repositories.MockRepositories
 {
-    public class VehicleRecordRepositoryQA : IVehicleRecordRepository
+    public class VehicleRepositoryQA : IVehicleRepository
     {
-        private readonly IInteriorColorTypeRepository _interiorColorTypeRepository = new
-            InteriorColorTypeRepositoryQA();
-        private readonly IExteriorColorTypeRepository _exteriorColorTypeRepository = new
-            ExteriorColorTypeRepositoryQA();
+        private readonly IInteriorColorRepository _interiorColorTypeRepository = new
+            InteriorColorRepositoryQA();
+        private readonly IExteriorColorRepository _exteriorColorTypeRepository = new
+            ExteriorColorRepositoryQA();
         private readonly IModelTypeRepository _modelTypeRepository = new
             ModelTypeRepositoryQA();
 
-        private List<VehicleRecord> _vehicleRecords = new List<VehicleRecord>();
+        private List<Vehicle> _vehicles = new List<Vehicle>();
 
-        public VehicleRecordRepositoryQA()
+        public VehicleRepositoryQA()
         {
             var seedList = SeedRepo();
 
             foreach(var vehicleRecord in seedList)
             {
-                _vehicleRecords.Add(vehicleRecord);
+                _vehicles.Add(vehicleRecord);
             }
         }
-        public IEnumerable<VehicleRecord> SeedRepo() =>
-            new List<VehicleRecord>
+        public IEnumerable<Vehicle> SeedRepo() =>
+            new List<Vehicle>
             {
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "1C4RJFBG5FC767030",
                     Transmission = Models.Enums.TransmissionType.Automatic,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Tan"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Black"),
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Edge"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Edge"),
                     Mileage = 590,
                     Year = "2022",
                     DateAdded = new DateTime(1/21/2023),
@@ -44,14 +44,14 @@ namespace AutoDealer.Repositories.MockRepositories
                     Description = "Very cool SUV!",
                     IsUsed = true
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "1C4RJFBG5FC767031",
                     Transmission = Models.Enums.TransmissionType.Automatic,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Red"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Mustang"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Mustang"),
                     Mileage = 1200,
                     Year = "2021",
                     DateAdded = new DateTime(1/21/2023),
@@ -62,14 +62,14 @@ namespace AutoDealer.Repositories.MockRepositories
                     Description = "A beautiful sports car!",
                     IsFeatured = true
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "aaaaaaaaaaaaaaaaa",
                     Transmission = Models.Enums.TransmissionType.Manual,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Blue"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Tercel"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Tercel"),
                     Mileage = 360000,
                     Year = "1978",
                     DateAdded = new DateTime(1/21/2023),
@@ -81,14 +81,14 @@ namespace AutoDealer.Repositories.MockRepositories
                     IsFeatured = true,
                     IsUsed = true
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "bbbbbbbbbbbbbbbb",
                     Transmission = Models.Enums.TransmissionType.Automatic,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Black"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Black"),
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Grand Cherokee"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Grand Cherokee"),
                     Mileage = 2600,
                     Year = "2022",
                     DateAdded = new DateTime(1/21/2023),
@@ -98,14 +98,14 @@ namespace AutoDealer.Repositories.MockRepositories
                     MRSP = 54500,
                     Description = "A beautiful used SUV!"
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "ccccccccccccccccc",
                     Transmission = Models.Enums.TransmissionType.Automatic,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Tan"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Silver"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Optima"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Optima"),
                     Mileage = 2300,
                     Year = "2021",
                     DateAdded = new DateTime(1/21/2023),
@@ -115,14 +115,14 @@ namespace AutoDealer.Repositories.MockRepositories
                     MRSP = 36400,
                     Description = "llorem Ipsum...!"
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "ddddddddddddddddd",
                     Transmission = Models.Enums.TransmissionType.Automatic,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "White"),
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Wrangler"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Wrangler"),
                     Mileage = 127000,
                     Year = "2015",
                     DateAdded = new DateTime(1/21/2023),
@@ -133,14 +133,14 @@ namespace AutoDealer.Repositories.MockRepositories
                     Description = "A great Jeep for playing outdoors!",
                     IsFeatured = true
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "eeeeeeeeeeeeeeeee",
                     Transmission = Models.Enums.TransmissionType.Manual,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Black"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Black"),
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Sorrento"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Sorrento"),
                     Mileage = 35000,
                     Year = "2020",
                     DateAdded = new DateTime(1/21/2023),
@@ -150,14 +150,14 @@ namespace AutoDealer.Repositories.MockRepositories
                     MRSP = 41500,
                     Description = "Another kinda cool SUV!"
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "fffffffffffffffff",
                     Transmission = Models.Enums.TransmissionType.Automatic,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Red"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Mustang"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Mustang"),
                     Mileage = 1200,
                     Year = "2021",
                     DateAdded = new DateTime(1/21/2023),
@@ -169,14 +169,14 @@ namespace AutoDealer.Repositories.MockRepositories
                     IsFeatured = true,
                     IsSold = false
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "ggggggggggggggggg",
                     Transmission = Models.Enums.TransmissionType.Automatic,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Red"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Mustang"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Mustang"),
                     Mileage = 1200,
                     Year = "2021",
                     DateAdded = new DateTime(1/21/2023),
@@ -188,14 +188,14 @@ namespace AutoDealer.Repositories.MockRepositories
                     IsFeatured = true,
                     IsSold = false
                 },
-                new VehicleRecord
+                new Vehicle
                 {
                     VehicleVIN = "hhhhhhhhhhhhhhhhh",
                     Transmission = Models.Enums.TransmissionType.Automatic,
                     InteriorColor = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray"),
                     ExteriorColor = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Red"),
                     BodyStyle = Models.Enums.BodyStyleType.Car,
-                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.ModelName == "Mustang"),
+                    Model = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Mustang"),
                     Mileage = 1200,
                     Year = "2021",
                     DateAdded = new DateTime(1/21/2023),
@@ -209,19 +209,19 @@ namespace AutoDealer.Repositories.MockRepositories
                 },
             };
        
-        public void DeleteVehicleRecord(string vehicleVIN)
+        public void DeleteVehicle(string vehicleVIN)
         {
             var vehicleRecordtoDelete = GetAll().FirstOrDefault(v => v.VehicleVIN == vehicleVIN);
            
             if(vehicleRecordtoDelete != null)
             {
-                _vehicleRecords.Remove(vehicleRecordtoDelete);
+                _vehicles.Remove(vehicleRecordtoDelete);
             }
         }
 
-        public VehicleRecord? FindById(string vehicleVIN) => GetAll().FirstOrDefault(v => v.VehicleVIN == vehicleVIN);
+        public Vehicle? FindById(string vehicleVIN) => GetAll().FirstOrDefault(v => v.VehicleVIN == vehicleVIN);
 
-        public IEnumerable<VehicleRecord> FeaturedVehicles
+        public IEnumerable<Vehicle> FeaturedVehicles
         {
             get
             {
@@ -229,22 +229,22 @@ namespace AutoDealer.Repositories.MockRepositories
             }
         }
 
-        public void InsertVehicleRecord(VehicleRecord vehicleRecord)
+        public void InsertVehicle(Vehicle vehicle)
         {
-            _vehicleRecords.Add(vehicleRecord);
+            _vehicles.Add(vehicle);
         }
 
-        public void UpdateVehicleRecord(VehicleRecord vehicleRecord)
+        public void UpdateVehicle(Vehicle vehicle)
         {
-            if(_vehicleRecords.FirstOrDefault(v => v.VehicleVIN == vehicleRecord.VehicleVIN) != null)
+            if(_vehicles.FirstOrDefault(v => v.VehicleVIN == vehicle.VehicleVIN) != null)
             {
-                vehicleRecord = _vehicleRecords.FirstOrDefault(v => v.VehicleVIN == vehicleRecord.VehicleVIN);
+                vehicle = _vehicles.FirstOrDefault(v => v.VehicleVIN == vehicle.VehicleVIN);
             }
         }
 
-        public IEnumerable<VehicleRecord> GetAll()
+        public IEnumerable<Vehicle> GetAll()
         {
-            return _vehicleRecords;
+            return _vehicles;
         }
     }
 }
