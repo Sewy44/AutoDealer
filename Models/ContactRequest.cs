@@ -13,6 +13,8 @@ namespace AutoDealer.Models
         public string? ContactPhone { get; set; }
         public string? ContactMessage { get; set; }
         public DateTime DateContactRequested { get; set; }
+        public string? VehicleVIN { get; set; }
+        //Navigation Property
         public Vehicle? VehicleRequested { get; set; }
     }
 }

@@ -9,7 +9,8 @@ namespace AutoDealer.Models.VehicleComponents
         public string? Model { get; set; }
         public string? AddedBy { get; set; }
         public DateTime AddedDate { get; set; }
-        public Guid? BrandNameId { get; set; }
+        public Guid BrandNameId { get; set; }
+        //Navigation Property
         public Brand? Brand { get; set; }
     }
 }

@@ -9,5 +9,7 @@ namespace AutoDealer.Models.VehicleComponents
         public string? BrandName { get; set; }
         public DateTime AddedDate { get; set; }
         public string? AddedBy { get; set; }
+        public Guid ModelId { get; set; }
+        public ICollection<ModelType>? Models { get; set; }
     }
 }

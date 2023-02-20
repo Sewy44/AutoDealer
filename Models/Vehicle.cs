@@ -10,10 +10,7 @@ namespace AutoDealer.Models
         [Key]
         public string VehicleVIN { get; set; } = string.Empty;
         public TransmissionType? Transmission { get; set; }
-        public InteriorColor? InteriorColor { get; set; }
-        public ExteriorColor? ExteriorColor { get; set; }
         public BodyStyleType BodyStyle { get; set; }
-        public ModelType? Model { get; set; }
         
         [Column(TypeName = "decimal(6,0)")]
         public decimal Mileage { get; set; }
@@ -37,12 +34,12 @@ namespace AutoDealer.Models
             get => "inventory-" + VehicleVIN + ".jpg";
             set => ImageFileName = value; 
         }
-
-        public Vehicle()
-        {
-            Model = new ModelType();
-            InteriorColor = new InteriorColor();
-            ExteriorColor = new ExteriorColor();
-        }
+        public Guid InteriorColorId { get; set; }
+        public Guid ExteriorColorId { get; set; }
+        public Guid ModelId { get; set; }
+        //Navigation Properties
+        public ICollection<InteriorColor>? InteriorColors { get; set; }
+        public ICollection<ExteriorColor>? ExteriorColors { get; set; }
+        public ICollection<ModelType>? Models { get; set; }
     }
 }
