@@ -5,6 +5,7 @@ namespace AutoDealer.Repositories.MockRepositories
 {
     public class ModelTypeRepositoryQA : IModelTypeRepository
     {
+        private readonly IBrandRepository _brandRepository = new BrandRepositoryQA();
         private List<ModelType> _models = new List<ModelType>();
 
         private DateTime _addedDate = new DateTime(2023, 1, 1);
@@ -25,10 +26,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     ModelId = Guid.NewGuid(),
                     Model = "Edge",
-                    Brand = new Brand()
-                    {
-                        BrandName = "Ford"
-                    },
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Ford").BrandNameId,
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
@@ -36,10 +34,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     ModelId = Guid.NewGuid(),
                     Model = "Mustang",
-                    Brand = new Brand()
-                    {
-                        BrandName = "Ford"
-                    },
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Ford").BrandNameId,
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
@@ -47,10 +42,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     ModelId = Guid.NewGuid(),
                     Model = "Sorrento",
-                    Brand = new Brand()
-                    {
-                        BrandName = "Kia"
-                    },
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Kia").BrandNameId,
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
@@ -58,10 +50,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     ModelId = Guid.NewGuid(),
                     Model = "Optima",
-                    Brand = new Brand()
-                    {
-                        BrandName = "Kia"
-                    },
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Kia").BrandNameId,
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
@@ -69,10 +58,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     ModelId = Guid.NewGuid(),
                     Model = "Grand Cherokee L",
-                    Brand = new Brand()
-                    {
-                        BrandName = "Jeep"
-                    },
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Jeep").BrandNameId,
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
@@ -80,10 +66,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     ModelId = Guid.NewGuid(),
                     Model = "Wrangler",
-                    Brand = new Brand()
-                    {
-                        BrandName = "Jeep"
-                    },
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Jeep").BrandNameId,
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
@@ -91,10 +74,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     ModelId = Guid.NewGuid(),
                     Model = "ForeRunner",
-                    Brand = new Brand()
-                    {
-                        BrandName = "Toyota"
-                    },
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Toyota").BrandNameId,
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 },
@@ -102,10 +82,7 @@ namespace AutoDealer.Repositories.MockRepositories
                 {
                     ModelId = Guid.NewGuid(),
                     Model = "Tercel",
-                    Brand = new Brand()
-                    {
-                        BrandName = "Toyota"
-                    },
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Toyota").BrandNameId,
                     AddedBy = "jamie@Autodealer.com",
                     AddedDate = _addedDate
                 }

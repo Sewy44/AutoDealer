@@ -5,8 +5,8 @@ namespace AutoDealer.Repositories.MockRepositories
 {
     public class BrandRepositoryQA : IBrandRepository
     {
-        private List<Brand> _brandNames = new List<Brand>();
-        private static DateTime _addedDate = new DateTime(2023,1,22);
+        private readonly List<Brand> _brandNames = new List<Brand>();
+        private readonly DateTime _addedDate = new DateTime(2023,1,22);
 
         public BrandRepositoryQA()
         {

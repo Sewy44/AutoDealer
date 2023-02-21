@@ -17,11 +17,11 @@ builder.Services.AddScoped<ISpecialRepository, SpecialRepositoryQA>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepositoryQA>();
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AutoDealerDbContext>(options =>
-{
-    options.UseSqlServer(
-        builder.Configuration["ConnectionStrings:AutoDealerDbContextConnection"]);
-});
+//builder.Services.AddDbContext<AutoDealerDbContext>(options =>
+//{
+//    options.UseSqlServer(
+//        builder.Configuration["ConnectionStrings:AutoDealerDbContextConnection"]);
+//});
 
 var app = builder.Build();
 
@@ -34,6 +34,6 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 app.MapDefaultControllerRoute();//endpoint middleware.
-DBInitializer.Seed(app);
+//DBInitializer.Seed(app);
 #endregion
 app.Run();
