@@ -1,8 +1,5 @@
-using AutoDealer.Repositories;
 using AutoDealer.Repositories.Interfaces;
 using AutoDealer.Repositories.MockRepositories;
-using AutoDealer.Repositories.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 

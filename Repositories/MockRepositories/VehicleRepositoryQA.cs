@@ -5,17 +5,19 @@ namespace AutoDealer.Repositories.MockRepositories
 {
     public class VehicleRepositoryQA : IVehicleRepository
     {
-        private readonly IInteriorColorRepository _interiorColorTypeRepository = new
-            InteriorColorRepositoryQA();
-        private readonly IExteriorColorRepository _exteriorColorTypeRepository = new
-            ExteriorColorRepositoryQA();
-        private readonly IModelTypeRepository _modelTypeRepository = new
-            ModelTypeRepositoryQA();
+        private readonly IInteriorColorRepository _interiorColorTypeRepository;
+        private readonly IExteriorColorRepository _exteriorColorTypeRepository;
+        private readonly IBrandRepository _brandRepository;
 
-        private List<Vehicle> _vehicles = new List<Vehicle>();
+        private readonly List<Vehicle> _vehicles = new List<Vehicle>();
 
-        public VehicleRepositoryQA()
+        public VehicleRepositoryQA(IInteriorColorRepository interiorColorRepository, IExteriorColorRepository exteriorColorRepository,
+            IBrandRepository brandRepository)
         {
+            _interiorColorTypeRepository = interiorColorRepository;
+            _exteriorColorTypeRepository = exteriorColorRepository;
+            _brandRepository = brandRepository;
+
             var seedList = SeedRepo();
 
             foreach(var vehicleRecord in seedList)
@@ -33,7 +35,8 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Tan").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Black").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
-                    ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Edge").ModelId,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Ford").BrandNameId,
+                    ModelId = _brandRepository.GetAll().FirstOrDefault(),
                     Mileage = 590,
                     Year = "2022",
                     DateAdded = new DateTime(1/21/2023),
@@ -51,6 +54,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Red").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.Car,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Ford").BrandNameId,
                     ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Mustang").ModelId,
                     Mileage = 1200,
                     Year = "2021",
@@ -69,6 +73,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Blue").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.Car,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Toyota").BrandNameId,
                     ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Tercel").ModelId,
                     Mileage = 360000,
                     Year = "1978",
@@ -88,6 +93,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Black").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Black").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Jeep").BrandNameId,
                     ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Grand Cherokee").ModelId,
                     Mileage = 2600,
                     Year = "2022",
@@ -105,6 +111,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Tan").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Silver").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.Car,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Kia").BrandNameId,
                     ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Optima").ModelId,
                     Mileage = 2300,
                     Year = "2021",
@@ -122,6 +129,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "White").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Jeep").BrandNameId,
                     ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Wrangler").ModelId,
                     Mileage = 127000,
                     Year = "2015",
@@ -140,6 +148,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Black").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Black").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.SUV,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Kia").BrandNameId,
                     ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Sorrento").ModelId,
                     Mileage = 35000,
                     Year = "2020",
@@ -157,6 +166,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Red").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.Car,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Ford").BrandNameId,
                     ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Mustang").ModelId,
                     Mileage = 1200,
                     Year = "2021",
@@ -176,6 +186,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Red").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.Car,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Ford").BrandNameId,
                     ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Mustang").ModelId,
                     Mileage = 1200,
                     Year = "2021",
@@ -195,6 +206,7 @@ namespace AutoDealer.Repositories.MockRepositories
                     InteriorColorId = _interiorColorTypeRepository.GetAll().FirstOrDefault(c => c.InteriorColorName == "Gray").InteriorColorId,
                     ExteriorColorId = _exteriorColorTypeRepository.GetAll().FirstOrDefault(c => c.ExteriorColorName == "Red").ExteriorColorId,
                     BodyStyle = Models.Enums.BodyStyleType.Car,
+                    BrandNameId = _brandRepository.GetAll().FirstOrDefault(b => b.BrandName == "Ford").BrandNameId,
                     ModelId = _modelTypeRepository.GetAll().FirstOrDefault(m => m.Model == "Mustang").ModelId,
                     Mileage = 1200,
                     Year = "2021",

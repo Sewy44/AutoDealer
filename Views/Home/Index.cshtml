@@ -17,14 +17,14 @@
     {
         <div class="col">
             <div class="vehicleDetails">           
-                <img class="vehicleImage" style="width:100%;height:209px;" alt="@vehicle.ModelId. @vehicle.Model" src="@Url.Content("~/Images/" + vehicle.ImageFileName)" />
+                <img class="vehicleImage" style="width:100%;height:209px;" alt="@vehicle.Brand.BrandName @vehicle.Brand.Models.FirstOrDefault(x => x.ModelId == vehicle.Brand.ModelId).Model" src="@Url.Content("~/Images/" + vehicle.ImageFileName)" />
                 <div class="card-body vehicle-button">
                     <h4 class="d-grid">
 
                     </h4>
                     <div class="d-flex justify-content-between mt-2">
                         <h2 class="text-start">
-                            <a class="vehicle-link">@vehicle.Year.ToString() @vehicle.Model.Brand.BrandName @vehicle.Model</a>
+                            <a class="vehicle-link">@vehicle.Year.ToString() @vehicle.Brand.BrandName @vehicle.Brand.Models.FirstOrDefault(x => x.ModelId == vehicle.Brand.ModelId).Model</a>
                         </h2>
                         <h5 class="text-nowrap">
                             @vehicle.CurrentListPrice.ToString("c0")
