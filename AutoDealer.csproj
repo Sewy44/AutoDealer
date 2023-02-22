@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Repositories\Repositories\**" />
-    <Content Remove="Repositories\Repositories\**" />
-    <EmbeddedResource Remove="Repositories\Repositories\**" />
-    <None Remove="Repositories\Repositories\**" />
+    <Compile Remove="Repositories\MockRepositories\**" />
+    <Content Remove="Repositories\MockRepositories\**" />
+    <EmbeddedResource Remove="Repositories\MockRepositories\**" />
+    <None Remove="Repositories\MockRepositories\**" />
   </ItemGroup>
 
   <ItemGroup>

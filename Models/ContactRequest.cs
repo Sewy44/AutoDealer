@@ -15,6 +15,6 @@ namespace AutoDealer.Models
         public DateTime DateContactRequested { get; set; }
         public string? VehicleVIN { get; set; }
         //Navigation Property
-        public Vehicle? VehicleRequested { get; set; }
+        public virtual Vehicle? VehicleRequested { get; set; }
     }
 }

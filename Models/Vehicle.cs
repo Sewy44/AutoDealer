@@ -28,18 +28,13 @@ namespace AutoDealer.Models
         public bool IsFeatured { get; set; } = false;
         public bool IsSold { get; set; } = false;
         public bool IsUsed { get; set; } = false;
-
-        public string ImageFileName 
-        { 
-            get => "inventory-" + VehicleVIN + ".jpg"; 
-        }
+        public string ImageFileName { get; set; } = "inventory-" + VehicleVIN + ".jpg";
         public Guid InteriorColorId { get; set; }
         public Guid ExteriorColorId { get; set; }
-        public Guid BrandNameId{ get; set; }
         public Guid ModelId { get; set; }
         //Navigation Properties
-        public ICollection<InteriorColor>? InteriorColors { get; set; }
-        public ICollection<ExteriorColor>? ExteriorColors { get; set; }
-        public ICollection<Brand> Brands { get; set; }
+        public virtual InteriorColor? InteriorColor { get; set; }
+        public virtual ExteriorColor? ExteriorColor { get; set; }
+        public virtual ModelType? Model { get; set; }
     }
 }

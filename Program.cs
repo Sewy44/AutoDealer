@@ -1,24 +1,26 @@
+using AutoDealer.Repositories;
 using AutoDealer.Repositories.Interfaces;
-using AutoDealer.Repositories.MockRepositories;
+using AutoDealer.Repositories.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<IBrandRepository, BrandRepositoryQA>();
-builder.Services.AddScoped<IContactRequestRepository, ContactRequestRepositoryQA>();  
-builder.Services.AddScoped<ICustomerRecordRepository, CustomerRecordRepositoryQA>();  
-builder.Services.AddScoped<IExteriorColorRepository, ExteriorColorRepositoryQA>();    
-builder.Services.AddScoped<IInteriorColorRepository, InteriorColorRepositoryQA>();   
-builder.Services.AddScoped<IModelTypeRepository, ModelTypeRepositoryQA>();
-builder.Services.AddScoped<IPurchaseRecordRepository, PurchaseRecordRepositoryQA>();
-builder.Services.AddScoped<ISpecialRepository, SpecialRepositoryQA>();
-builder.Services.AddScoped<IVehicleRepository, VehicleRepositoryQA>();
+builder.Services.AddScoped<IBrandRepository, BrandRepository>();
+builder.Services.AddScoped<IContactRequestRepository, ContactRequestRepository>();  
+builder.Services.AddScoped<ICustomerRecordRepository, CustomerRecordRepository>();  
+builder.Services.AddScoped<IExteriorColorRepository, ExteriorColorRepository>();    
+builder.Services.AddScoped<IInteriorColorRepository, InteriorColorRepository>();   
+builder.Services.AddScoped<IModelTypeRepository, ModelTypeRepository>();
+builder.Services.AddScoped<IPurchaseRecordRepository, PurchaseRecordRepository>();
+builder.Services.AddScoped<ISpecialRepository, SpecialRepository>();
+builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 
 builder.Services.AddControllersWithViews();
-//builder.Services.AddDbContext<AutoDealerDbContext>(options =>
-//{
-//    options.UseSqlServer(
-//        builder.Configuration["ConnectionStrings:AutoDealerDbContextConnection"]);
-//});
+builder.Services.AddDbContext<AutoDealerDbContext>(options =>
+{
+    options.UseSqlServer(
+        builder.Configuration["ConnectionStrings:AutoDealerDbContextConnection"]);
+});
 
 var app = builder.Build();
 
@@ -31,6 +33,6 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 app.MapDefaultControllerRoute();//endpoint middleware.
-//DBInitializer.Seed(app);
+DBInitializer.Seed(app);
 #endregion
 app.Run();
