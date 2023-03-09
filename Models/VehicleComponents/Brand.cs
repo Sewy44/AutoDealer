@@ -4,10 +4,15 @@ namespace AutoDealer.Models.VehicleComponents
 {
     public class Brand
     {
-        [Key]
-        public Guid BrandNameId { get; set; }
-        public string? BrandName { get; set; }
+        public Guid BrandId { get; set; }
+        public string BrandName { get; set; }
         public DateTime AddedDate { get; set; }
         public string? AddedBy { get; set; }
+        public List<Model> Models { get; set; }
+
+        public Brand()
+        {
+            Models = new List<Model>();
+        }
     }
 }

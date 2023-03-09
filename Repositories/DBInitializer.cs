@@ -367,7 +367,8 @@ namespace AutoDealer.Repositories
                     CurrentListPrice = 57000,
                     MRSP = 58500,
                     Description = "Very cool SUV!",
-                    IsUsed = true
+                    IsUsed = true,
+                    ImageFileName = "inventory-1C4RJFBG5FC767030.jpg"
                 },
                 new Vehicle
                 {
@@ -385,7 +386,8 @@ namespace AutoDealer.Repositories
                     CurrentListPrice = 40000,
                     MRSP = 41500,
                     Description = "A beautiful sports car!",
-                    IsFeatured = true
+                    IsFeatured = true,
+                    ImageFileName = "inventory-1C4RJFBG5FC767031.jpg"
                 },
                 new Vehicle
                 {
@@ -404,7 +406,8 @@ namespace AutoDealer.Repositories
                     MRSP = 200,
                     Description = "A classic!",
                     IsFeatured = true,
-                    IsUsed = true
+                    IsUsed = true,
+                    ImageFileName = "inventory-aaaaaaaaaaaaaaaaa.jpg"
                 },
                 new Vehicle
                 {
@@ -421,7 +424,8 @@ namespace AutoDealer.Repositories
                     OriginalListPrice = 51500,
                     CurrentListPrice = 51500,
                     MRSP = 54500,
-                    Description = "A beautiful used SUV!"
+                    Description = "A beautiful used SUV!",
+                    ImageFileName = "inventory-bbbbbbbbbbbbbbbb.jpg"
                 },
                 new Vehicle
                 {
@@ -438,7 +442,8 @@ namespace AutoDealer.Repositories
                     OriginalListPrice = 32000,
                     CurrentListPrice = 32000,
                     MRSP = 36400,
-                    Description = "llorem Ipsum...!"
+                    Description = "llorem Ipsum...!",
+                    ImageFileName = "inventory-ccccccccccccccccc.jpg"
                 },
                 new Vehicle
                 {
@@ -456,7 +461,8 @@ namespace AutoDealer.Repositories
                     CurrentListPrice = 20000,
                     MRSP = 41500,
                     Description = "A great Jeep for playing outdoors!",
-                    IsFeatured = true
+                    IsFeatured = true,
+                    ImageFileName = "inventory-ddddddddddddddddd.jpg"
                 },
                 new Vehicle
                 {
@@ -473,7 +479,8 @@ namespace AutoDealer.Repositories
                     OriginalListPrice = 23000,
                     CurrentListPrice = 23000,
                     MRSP = 41500,
-                    Description = "Another kinda cool SUV!"
+                    Description = "Another kinda cool SUV!",
+                    ImageFileName = "inventory-eeeeeeeeeeeeeeeee.jpg"
                 },
                 new Vehicle
                 {
@@ -492,7 +499,8 @@ namespace AutoDealer.Repositories
                     MRSP = 41500,
                     Description = "Could we have any more Mustangs?",
                     IsFeatured = true,
-                    IsSold = false
+                    IsSold = false,
+                    ImageFileName = "inventory-fffffffffffffffff.jpg"
                 },
                 new Vehicle
                 {
@@ -511,7 +519,8 @@ namespace AutoDealer.Repositories
                     MRSP = 41500,
                     Description = "Kina cool car!",
                     IsFeatured = true,
-                    IsSold = false
+                    IsSold = false,
+                    ImageFileName = "inventory-ggggggggggggggggg.jpg"
                 },
                 new Vehicle
                 {
@@ -530,7 +539,8 @@ namespace AutoDealer.Repositories
                     MRSP = 41500,
                     Description = "Kina cool Car!",
                     IsFeatured = true,
-                    IsSold = false
+                    IsSold = false,
+                    ImageFileName = "inventory-hhhhhhhhhhhhhhhhh.jpg"
                 }
             };
 

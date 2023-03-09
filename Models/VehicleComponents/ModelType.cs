@@ -2,14 +2,13 @@
 
 namespace AutoDealer.Models.VehicleComponents
 {
-    public class ModelType
+    public class Model
     {
-        [Key]
         public Guid ModelId { get; set; }
-        public string? Model { get; set; }
-        public string? AddedBy { get; set; }
+        public string ModelName { get; set; }
+        public string AddedBy { get; set; }
         public DateTime AddedDate { get; set; }
-        public Guid BrandNameId { get; set; }
-        public virtual Brand? Brand { get; set; }
+        public Brand BrandName { get; set; }
+        public Guid BrandNameId { get; set; } 
     }
 }

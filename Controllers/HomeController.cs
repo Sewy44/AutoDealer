@@ -18,7 +18,7 @@ namespace AutoDealer.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            HomeIndexViewModel model = new HomeIndexViewModel(_specialsRepository.GetAll(), _vehicleRecordRepository.FeaturedVehicles);
+            HomeIndexViewModel model = new HomeIndexViewModel(_specialsRepository.GetAll().ToList(), _vehicleRecordRepository.FeaturedVehicles.ToList());
             return View(model);
         }
     }

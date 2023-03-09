@@ -4,13 +4,12 @@ namespace AutoDealer.Models.Special
 {
     public class Special
     {   
-        [Key]
         public Guid SpecialId { get; set; }
-        public string SpecialName { get; set; } = string.Empty;
-        public string SpecialDescription { get; set; } = string.Empty;
-        public string AddedBy { get; set; } = string.Empty;
+        public string SpecialName { get; set; }
+        public string SpecialDescription { get; set; }
+        public string AddedBy { get; set; }
         public DateTime AddedDate { get; set; }
         public DateTime ExpirationDate { get; set; }
-        public string ImageFileName { get; set; } = string.Empty;
+        public string ImageFileName { get; set; }
     }
 }
